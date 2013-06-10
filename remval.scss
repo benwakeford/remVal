@@ -1,0 +1,32 @@
+
+$baseline-px:  10px;
+$baseline-rem: 1rem;
+
+@mixin remVal($property, $values, $important: "") {
+  // If there is only one (numeric) value, return the property/value line for it.
+	@if $important == true { $important: "!important" }
+	@if type-of($values) == "number" {
+		#{$property}: $values * $baseline-px;
+		#{$property}: $values * $baseline-rem; }
+	@else {
+	// Create an empty list that we can dump values into
+		$px-values:  unquote("");
+		$rem-values: unquote("");
+		@each $value in $values {
+			// If the value is zero, return 0
+			@if $value == 0 {
+				$px-values:  append($px-values,  $value);
+				$rem-values: append($rem-values, $value); }
+			@elseif $value == auto {
+				$px-values:  append($px-values,  auto);
+				$rem-values: append($rem-values, auto); }
+			@else {
+				$px-values:  append($px-values,  $value * $baseline-px );
+				$rem-values: append($rem-values, $value * $baseline-rem);
+			}
+		}
+		// Return the property and its list of converted values
+		#{$property}: $px-values #{$important};
+		#{$property}: $rem-values #{$important};
+	}
+}
