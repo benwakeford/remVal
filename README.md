@@ -3,21 +3,21 @@ remVal
 
 Use REM units today with this gracefully degradable SASS mixin!
 
-REMs give you the flexibility of EMs, with the precision and confidence of PXs.
+REMs give you the flexibility of ems, with the precision and confidence of pxs.
 
 http://caniuse.com/rem
 
-Sadly, as IE8 still is high circulation (and likely to be so for some years to come), REMs are a bit scary to use on their own, and a fallback should always be given.
+Sadly, as IE8 still is high circulation (and likely to be so for some years to come), rems are a bit scary to use on their own, and a fallback should always be given.
 
 remVal makes this easy by allowing you pass em-based values as 10ths of the pixel value. So, 11px = 1.1em, which will spit out 1.1rem with 11px as the safe fallback.
 
-It is based on the REM mixin from https://github.com/bitmanic/rem, but takes a different approach in that I didn't really want to be thinking in terms of absolute PX values anymore.
+It is based on the rem mixin from https://github.com/bitmanic/rem, but takes a different approach in that I didn't really want to be thinking in terms of absolute px values anymore.
 
 
 How to use
 ----------
 
-First, set up your base sizes. Jonathon Snook gives a great intro to preparing your CSS for REMs here:
+First, set up your base sizes. Jonathon Snook gives a great intro to preparing your CSS for rems here:
 
 http://snook.ca/archives/html_and_css/font-size-with-rem
 
@@ -36,7 +36,7 @@ textarea {
 
 Then include the mixin at the start of your SASS project.
 
-So to use it, just pass the mixin a property and its value (measured in base-10 REMs, e.g.: 11px = 1.1). The values can either be single prop
+So to use it, just pass the mixin a property and its value (measured in base-10 rems, e.g.: 11px = 1.1). The values can either be single properties, or a list.
 
 
 Examples
